@@ -1,14 +1,13 @@
 import React from 'react';
 import './App.css';
+import Layout from './components/layout/Layout';
 
 function App() {
   return (
     <div>
-      <header>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
+      	<Layout>
+		  	<p>Navbar</p>
+	  	</Layout>
     </div>
   );
 }
