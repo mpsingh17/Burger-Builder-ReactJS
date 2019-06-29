@@ -24,7 +24,7 @@ const BurgerIngredient = (props) => {
         break;
 
         case ('cheese'):
-            ingredient = <div className={styles.Meat}></div>;
+            ingredient = <div className={styles.Cheese}></div>;
         break;
 
         case ('salad'):
@@ -36,6 +36,7 @@ const BurgerIngredient = (props) => {
         break;
 
         default:
+            ingredient = null;
             break;
     }
     return ingredient;
