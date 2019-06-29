@@ -1,6 +1,6 @@
 import React from 'react';
 
-const layout = (props) => {
+const Layout = (props) => {
     return (
         <React.Fragment>
             <div>Toolbar, Sidebar, Backdrop</div>
@@ -13,4 +13,4 @@ const layout = (props) => {
     );
 }
 
-export default layout;
+export default Layout;
