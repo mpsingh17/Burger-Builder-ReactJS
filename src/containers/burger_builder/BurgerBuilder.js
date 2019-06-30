@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Burger from '../../components/burger/Burger';
-import BuildControls from '../../components/burger/build_controls/BuildControls'; 
+import BuildControls from '../../components/build_controls/BuildControls'; 
 
 class BurgerBuilder extends Component {
 
