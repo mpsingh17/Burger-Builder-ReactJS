@@ -17,10 +17,11 @@ const BuildControls = (props) => {
                 <BuildControl
                     key={ctrl.label}
                     label={ctrl.label}
-                    addIngredientHandler={(type) => props.addIngredientHandler(ctrl.type)} />
+                    addIngredientHandler={() => props.addIngredientHandler(ctrl.type)}
+                    removeIngredientHandler={() => props.removeIngredientHandler(ctrl.type)} />
             ))}
         </div>
-    )
+    );
 }
 
 export default BuildControls;
