@@ -21,6 +21,9 @@ const BuildControls = (props) => {
                     addIngredientHandler={() => props.addIngredientHandler(ctrl.type)}
                     removeIngredientHandler={() => props.removeIngredientHandler(ctrl.type)} />
             ))}
+            <button
+                className={styles.OrderButton}
+                disabled={!props.isPurchasable}>ORDER NOW</button>
         </div>
     );
 }
