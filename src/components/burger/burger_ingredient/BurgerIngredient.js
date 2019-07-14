@@ -4,7 +4,7 @@ import PropType from 'prop-types';
 
 const BurgerIngredient = (props) => {
     let ingredient = null;
-    
+
     switch (props.type) {
         case ('bread-bottom'):
             ingredient = <div className={styles.BreadBottom}></div>;
@@ -21,19 +21,19 @@ const BurgerIngredient = (props) => {
 
         case ('meat'):
             ingredient = <div className={styles.Meat}></div>;
-        break;
+            break;
 
         case ('cheese'):
             ingredient = <div className={styles.Cheese}></div>;
-        break;
+            break;
 
         case ('salad'):
             ingredient = <div className={styles.Salad}></div>;
-        break;
+            break;
 
         case ('bacon'):
             ingredient = <div className={styles.Bacon}></div>;
-        break;
+            break;
 
         default:
             ingredient = null;
