@@ -20,7 +20,8 @@ class BurgerBuilder extends Component {
             meat: 0
         },
         price: 4,
-        isPurchasable: false
+        isPurchasable: false,
+        showModal: false
     };
 
     updateIsPurchasableState = ingredients => {
@@ -71,18 +72,29 @@ class BurgerBuilder extends Component {
         this.updateIsPurchasableState(ingredientsCopy);
     };
 
+    showModalHandler = () => {
+        this.setState({ showModal: true });
+    };
+
     render() {
-        return (
-            <React.Fragment>
+        let modal = null;
+        if (this.state.showModal) {
+            modal = (
                 <Modal>
                     <OrderSummary ingredients={this.state.ingredients} />
                 </Modal>
+            );
+        }
+        return (
+            <React.Fragment>
+                {modal}
                 <Burger ingredients={this.state.ingredients} />
                 <BuildControls
                     price={this.state.price}
                     isPurchasable={this.state.isPurchasable}
                     addIngredientHandler={this.addIngredientHandler}
                     removeIngredientHandler={this.removeIngredientHandler}
+                    showModalHandler={this.showModalHandler}
                 />
             </React.Fragment>
         );

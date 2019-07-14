@@ -1,16 +1,15 @@
-import React from 'react';
-import styles from './BuildControls.module.css';
-import BuildControl from './build_control/BuildControl';
+import React from "react";
+import styles from "./BuildControls.module.css";
+import BuildControl from "./build_control/BuildControl";
 
 const controls = [
-    { label: 'Salad', type: 'salad' },
-    { label: 'Bacon', type: 'bacon' },
-    { label: 'Cheese', type: 'cheese' },
-    { label: 'Meat', type: 'meat' },
-]
+    { label: "Salad", type: "salad" },
+    { label: "Bacon", type: "bacon" },
+    { label: "Cheese", type: "cheese" },
+    { label: "Meat", type: "meat" }
+];
 
-const BuildControls = (props) => {
-
+const BuildControls = props => {
     return (
         <div className={styles.BuildControls}>
             <p>Current Price: {props.price.toFixed(2)}</p>
@@ -18,14 +17,23 @@ const BuildControls = (props) => {
                 <BuildControl
                     key={ctrl.label}
                     label={ctrl.label}
-                    addIngredientHandler={() => props.addIngredientHandler(ctrl.type)}
-                    removeIngredientHandler={() => props.removeIngredientHandler(ctrl.type)} />
+                    addIngredientHandler={() =>
+                        props.addIngredientHandler(ctrl.type)
+                    }
+                    removeIngredientHandler={() =>
+                        props.removeIngredientHandler(ctrl.type)
+                    }
+                />
             ))}
             <button
                 className={styles.OrderButton}
-                disabled={!props.isPurchasable}>ORDER NOW</button>
+                disabled={!props.isPurchasable}
+                onClick={props.showModalHandler}
+            >
+                ORDER NOW
+            </button>
         </div>
     );
-}
+};
 
 export default BuildControls;
