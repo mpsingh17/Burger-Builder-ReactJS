@@ -80,6 +80,10 @@ class BurgerBuilder extends Component {
         this.setState({ showModal: false });
     };
 
+    purchaseContinue = () => {
+        alert("You continue!");
+    };
+
     render() {
         let modal = null;
         if (this.state.showModal) {
@@ -88,7 +92,11 @@ class BurgerBuilder extends Component {
                     show={this.state.showModal}
                     hideModalHandler={this.hideModalHandler}
                 >
-                    <OrderSummary ingredients={this.state.ingredients} />
+                    <OrderSummary
+                        purchaseCancelled={this.hideModalHandler}
+                        purchaseContinue={this.purchaseContinue}
+                        ingredients={this.state.ingredients}
+                    />
                 </Modal>
             );
         }
