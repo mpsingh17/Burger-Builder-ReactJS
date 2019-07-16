@@ -14,6 +14,9 @@ const orderSummary = props => {
     return (
         <React.Fragment>
             <h3>Your Order</h3>
+            <p>
+                Total Price: <strong>${props.price.toFixed(2)}</strong>
+            </p>
             <p>Ingredients: </p>
             <ul>{ingredientSummary}</ul>
             <p>Proceed to Checkout</p>
