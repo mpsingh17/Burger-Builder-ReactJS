@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Layout.module.css";
 import Sidebar from "../UI/Sidebar/Sidebar";
 import BurgerBuilder from "../../containers/burger_builder/BurgerBuilder";
+import Navbar from "../UI/Navbar/Navbar";
 import { Container, Row, Col } from "react-bootstrap";
 
 const Layout = props => {
@@ -14,12 +15,13 @@ const Layout = props => {
                         className={
                             "border border-primary bg-light" +
                             " " +
-                            styles.SidebarCol
+                            styles.RemoveColPaddings
                         }
                     >
                         <Sidebar />
                     </Col>
-                    <Col>
+                    <Col className={styles.RemoveColPaddings}>
+                        <Navbar />
                         <BurgerBuilder />
                     </Col>
                 </Row>
