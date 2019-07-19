@@ -1,17 +1,9 @@
-import React from 'react';
-import Layout from './components/layout/Layout';
-import BurgerBuilder from './containers/burger_builder/BurgerBuilder';
+import "./assets/css/bootstrap.css";
+import React from "react";
+import Layout from "./components/layout/Layout";
 
 function App() {
-
-    return (
-        <div>
-            <Layout>
-				<BurgerBuilder />
-			</Layout>
-        </div>
-	);
-	
+    return <Layout />;
 }
 
 export default App;
