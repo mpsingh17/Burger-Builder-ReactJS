@@ -55,3 +55,9 @@
     width: 75%;
     /* border: 1px solid lightcoral; */
 }
+
+@media (max-width: 768px) {
+    .BuildControls {
+        width: 90%;
+    }
+}

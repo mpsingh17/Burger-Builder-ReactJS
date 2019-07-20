@@ -18,8 +18,8 @@ const BuildControls = props => {
             } mx-auto shadow p-3 my-4 bg-white rounded`}
         >
             <Card.Body>
-                <Row className="border border-primary">
-                    <Col sm={6}>
+                <Row>
+                    <Col lg={6}>
                         <Card.Title className="font-weight-bolder text-warning py-3">
                             Build Controls
                         </Card.Title>

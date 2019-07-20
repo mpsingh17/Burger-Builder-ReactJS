@@ -9,7 +9,7 @@ const BuildControl = props => {
             </div>
             <div className={`${styles.FlexFill} p-2`}>
                 <button
-                    className="btn btn-outline-danger px-4"
+                    className="btn btn-outline-danger px-lg-4"
                     onClick={props.removeIngredientHandler}
                 >
                     Less
@@ -17,7 +17,7 @@ const BuildControl = props => {
             </div>
             <div className={`${styles.FlexFill} p-2`}>
                 <button
-                    className="btn btn-outline-success px-4"
+                    className="btn btn-outline-success px-lg-4"
                     onClick={props.addIngredientHandler}
                 >
                     More
