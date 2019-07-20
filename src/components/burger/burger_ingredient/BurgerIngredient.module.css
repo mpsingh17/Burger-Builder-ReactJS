@@ -30,18 +30,18 @@
 
 .BurgerTop {
     height: 13vh;
-    background-color: #e27b36;
+    background-color: #e99001;
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .BurgerBottom {
     height: 13vh;
-    background-color: #e27b36;
+    background-color: #e99001;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 @media (max-width: 768px) {

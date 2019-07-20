@@ -1,18 +1,30 @@
-import React from 'react';
-import styles from './BuildControl.module.css';
+import React from "react";
+import styles from "./BuildControl.module.css";
 
-const BuildControl = (props) => {
+const BuildControl = props => {
     return (
-        <div className={styles.BuildControl}>
-            <div className={styles.Label}>{props.label}</div>
-            <button
-                className={styles.Less}
-                onClick={props.removeIngredientHandler}>Less</button>
-            <button
-                className={styles.More}
-                onClick={props.addIngredientHandler}>More</button>
+        <div className="d-flex mb-2 bg-secondary align-items-center">
+            <div className={`${styles.FlexFill} p-2 font-weight-bolder`}>
+                {props.label}
+            </div>
+            <div className={`${styles.FlexFill} p-2`}>
+                <button
+                    className="btn btn-outline-danger px-4"
+                    onClick={props.removeIngredientHandler}
+                >
+                    Less
+                </button>
+            </div>
+            <div className={`${styles.FlexFill} p-2`}>
+                <button
+                    className="btn btn-outline-success px-4"
+                    onClick={props.addIngredientHandler}
+                >
+                    More
+                </button>
+            </div>
         </div>
     );
-}
+};
 
 export default BuildControl;

@@ -1,4 +1,4 @@
-.BuildControl {
+/* .BuildControl {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,4 +53,8 @@
 .BuildControl .More:hover,.BuildControl .More:active {
     background-color: #99703F;
     color: white;
+} */
+
+.FlexFill {
+    flex: 1 1 0;
 }
