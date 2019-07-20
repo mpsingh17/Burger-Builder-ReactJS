@@ -1,38 +1,47 @@
-import React from 'react';
-import styles from './BurgerIngredient.module.css';
-import PropType from 'prop-types';
+import React from "react";
+import PropType from "prop-types";
+import styles from "./BurgerIngredient.module.css";
 
-const BurgerIngredient = (props) => {
+const BurgerIngredient = props => {
     let ingredient = null;
 
     switch (props.type) {
-        case ('bread-bottom'):
-            ingredient = <div className={styles.BreadBottom}></div>;
-            break;
-
-        case ('bread-top'):
+        case "bread-top":
             ingredient = (
-                <div className={styles.BreadTop}>
-                    <div className={styles.Seeds1}></div>
-                    <div className={styles.Seeds2}></div>
-                </div>
+                <div className={`${styles.Ingredient} ${styles.BurgerTop}`} />
             );
             break;
 
-        case ('meat'):
-            ingredient = <div className={styles.Meat}></div>;
+        case "bread-bottom":
+            ingredient = (
+                <div
+                    className={`${styles.Ingredient} ${styles.BurgerBottom}`}
+                />
+            );
             break;
 
-        case ('cheese'):
-            ingredient = <div className={styles.Cheese}></div>;
+        case "meat":
+            ingredient = (
+                <div className={`${styles.Ingredient} ${styles.Meat} my-1`} />
+            );
             break;
 
-        case ('salad'):
-            ingredient = <div className={styles.Salad}></div>;
+        case "cheese":
+            ingredient = (
+                <div className={`${styles.Ingredient} ${styles.Cheese} my-1`} />
+            );
             break;
 
-        case ('bacon'):
-            ingredient = <div className={styles.Bacon}></div>;
+        case "salad":
+            ingredient = (
+                <div className={`${styles.Ingredient} ${styles.Salad} my-1`} />
+            );
+            break;
+
+        case "bacon":
+            ingredient = (
+                <div className={`${styles.Ingredient} ${styles.Bacon} my-1`} />
+            );
             break;
 
         default:
@@ -40,11 +49,10 @@ const BurgerIngredient = (props) => {
             break;
     }
     return ingredient;
-}
+};
 
 BurgerIngredient.propTypes = {
     type: PropType.string.isRequired
 };
 
 export default BurgerIngredient;
-

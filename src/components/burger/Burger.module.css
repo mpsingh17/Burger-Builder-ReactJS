@@ -1,8 +1,8 @@
-.Burger {
+/* .Burger {
     width: 100%;
     margin: auto;
-    height: 250px;
-    overflow: scroll;
+    height: 200px;
+    overflow-y: scroll;
     text-align: center;
     font-weight: bold;
     font-size: 1.2rem;
@@ -24,7 +24,25 @@
 
 @media (min-width: 1000px) and (min-height: 700px) {
     .Burger {
-        width: 700px;
-        height: 600px;
+        width: 25vw;
+        height: 45vh;
     }
+} */
+
+.BurgerCard {
+    width: 50%;
+    height: 50vh;
+    overflow-y: scroll;
+    /* border: 1px solid lightcoral; */
+}
+
+@media (max-width: 768px) {
+    .BurgerCard {
+        width: 90%;
+    }
+}
+
+.NoIngredientLabel {
+    width: 65%;
+    font-weight: 600;
 }
