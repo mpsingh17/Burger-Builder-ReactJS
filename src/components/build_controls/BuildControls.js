@@ -19,9 +19,9 @@ const BuildControls = props => {
         >
             <Card.Body>
                 <Row>
-                    <Col lg={6}>
+                    <Col>
                         <Card.Title className="font-weight-bolder text-warning py-3">
-                            Build Controls
+                            Available Ingredients
                         </Card.Title>
 
                         {controls.map(ctrl => (
@@ -36,6 +36,13 @@ const BuildControls = props => {
                                 }
                             />
                         ))}
+                        <button
+                            className={`btn btn-block btn-outline-success mt-3`}
+                            disabled={!props.isPurchasable}
+                            onClick={props.showModalHandler}
+                        >
+                            ORDER NOW
+                        </button>
                     </Col>
                 </Row>
             </Card.Body>
