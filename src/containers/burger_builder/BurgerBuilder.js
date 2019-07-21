@@ -74,6 +74,7 @@ class BurgerBuilder extends Component {
 
     showModalHandler = () => {
         this.setState({ showModal: true });
+        console.log(this.state.showModal);
     };
 
     hideModalHandler = () => {
@@ -87,6 +88,7 @@ class BurgerBuilder extends Component {
     render() {
         let modal = null;
         if (this.state.showModal) {
+            console.log(this.state.showModal);
             modal = (
                 <Modal
                     show={this.state.showModal}

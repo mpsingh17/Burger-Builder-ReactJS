@@ -41,7 +41,14 @@ const BuildControls = props => {
                             disabled={!props.isPurchasable}
                             onClick={props.showModalHandler}
                         >
-                            ORDER NOW
+                            ORDER NOW{" "}
+                            <span
+                                className={`${
+                                    styles.PriceBadge
+                                } align-middle font-weight-bolder badge badge-pill badge-primary`}
+                            >
+                                {`$${props.price.toFixed(2)}`}
+                            </span>
                         </button>
                     </Col>
                 </Row>
