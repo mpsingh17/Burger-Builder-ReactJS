@@ -6,6 +6,7 @@ const menuIcon = props => {
         <a href="#" onClick={props.toggleSidebarHandler}>
             <img
                 src={menuIconSrc}
+                alt="side menu icon"
                 className={`img-fluid`}
                 width="33%"
                 height="auto"

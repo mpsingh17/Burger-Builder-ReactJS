@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./Sidebar.module.css";
-import deleteIcon from "../../../assets/img/delete-icon.png";
 
 const sidebar = props => {
     return (
