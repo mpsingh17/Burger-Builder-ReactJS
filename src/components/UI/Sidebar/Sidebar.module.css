@@ -1,0 +1,15 @@
+.Sidebar {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 13vw;
+    z-index: 100;
+    overflow: hidden;
+    transition: display 0.5;
+}
+.Sidebar a {
+    margin-left: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}

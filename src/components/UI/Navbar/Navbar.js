@@ -1,15 +1,38 @@
 import React from "react";
-import { Navbar, Nav } from "react-bootstrap";
 
 const navbar = () => {
     return (
-        <Navbar bg="light" expand="lg">
-            <Navbar.Brand href="#">MP's Builder</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav.Link href="#">Home</Nav.Link>
-            </Navbar.Collapse>
-        </Navbar>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div className={`container`}>
+                <a className="navbar-brand" href="#">
+                    Build Your Burger
+                </a>
+                <button
+                    className="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span className="navbar-toggler-icon" />
+                </button>
+
+                <div
+                    className="collapse navbar-collapse"
+                    id="navbarSupportedContent"
+                >
+                    <ul className="navbar-nav ml-auto">
+                        <li className="nav-item active">
+                            <a className="nav-link" href="#">
+                                Home <span className="sr-only">(current)</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     );
 };
 

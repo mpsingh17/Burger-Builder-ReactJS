@@ -2,3 +2,12 @@
     padding-right: 0;
     padding-left: 0;
 }
+
+.CollapseSideBarCol {
+    width: 20%;
+    transition: width 4s;
+}
+
+.CollapseSideBarCol:hover {
+    width: 2%;
+}
