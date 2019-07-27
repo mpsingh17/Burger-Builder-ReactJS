@@ -3,6 +3,7 @@ import Burger from "../../components/burger/Burger";
 import BuildControls from "../../components/build_controls/BuildControls";
 import Modal from "../../components/UI/Modal/Modal";
 import OrderSummary from "../../components/OrderSummary/OrderSummary";
+import Spinner from "../../components/UI/Spinner/Spinner";
 import axios from "../../axios-config";
 
 const INGREDIENT_PRICES = {
@@ -22,7 +23,8 @@ class BurgerBuilder extends Component {
         },
         price: 4,
         isPurchasable: false,
-        showModal: false
+        showModal: false,
+        loading: false
     };
 
     updateIsPurchasableState = ingredients => {
@@ -75,7 +77,6 @@ class BurgerBuilder extends Component {
 
     showModalHandler = () => {
         this.setState({ showModal: true });
-        console.log(this.state.showModal);
     };
 
     hideModalHandler = () => {
@@ -83,6 +84,7 @@ class BurgerBuilder extends Component {
     };
 
     purchaseContinue = () => {
+        this.setState({ loading: true });
         const order = {
             ingredients: this.state.ingredients,
             price: this.state.price.toFixed(2),
@@ -99,24 +101,33 @@ class BurgerBuilder extends Component {
         axios
             .post("/orders.json", order)
             .then(res => console.log(res))
-            .catch(err => console.log(err));
+            .catch(err => console.log(err))
+            .finally(() => {
+                this.setState({ loading: false, showModal: false });
+            });
     };
 
     render() {
+        let modalBody = (
+            <OrderSummary
+                price={this.state.price}
+                purchaseCancelled={this.hideModalHandler}
+                purchaseContinue={this.purchaseContinue}
+                ingredients={this.state.ingredients}
+            />
+        );
+        if (this.state.loading) {
+            modalBody = <Spinner />;
+        }
+
         let modal = null;
         if (this.state.showModal) {
-            console.log(this.state.showModal);
             modal = (
                 <Modal
                     show={this.state.showModal}
                     hideModalHandler={this.hideModalHandler}
                 >
-                    <OrderSummary
-                        price={this.state.price}
-                        purchaseCancelled={this.hideModalHandler}
-                        purchaseContinue={this.purchaseContinue}
-                        ingredients={this.state.ingredients}
-                    />
+                    {modalBody}
                 </Modal>
             );
         }
