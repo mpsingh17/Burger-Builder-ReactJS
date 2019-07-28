@@ -4,6 +4,7 @@ import BuildControls from "../../components/build_controls/BuildControls";
 import Modal from "../../components/UI/Modal/Modal";
 import OrderSummary from "../../components/OrderSummary/OrderSummary";
 import Spinner from "../../components/UI/Spinner/Spinner";
+import withErrorHandler from "../../hoc/with_error_handler/WithErrorHandler";
 import axios from "../../axios-config";
 
 const INGREDIENT_PRICES = {
@@ -15,17 +16,18 @@ const INGREDIENT_PRICES = {
 
 class BurgerBuilder extends Component {
     state = {
-        ingredients: {
-            salad: 0,
-            bacon: 0,
-            cheese: 0,
-            meat: 0
-        },
+        ingredients: null,
         price: 4,
         isPurchasable: false,
         showModal: false,
         loading: false
     };
+
+    componentDidMount() {
+        axios.get("/ingredients.json").then(res => {
+            this.setState({ ingredients: res.data });
+        });
+    }
 
     updateIsPurchasableState = ingredients => {
         const ingredientCount = Object.values(ingredients).reduce(
@@ -131,9 +133,8 @@ class BurgerBuilder extends Component {
                 </Modal>
             );
         }
-        return (
+        let burgerAndBuildControls = (
             <React.Fragment>
-                {modal}
                 <Burger ingredients={this.state.ingredients} />
                 <BuildControls
                     price={this.state.price}
@@ -144,7 +145,16 @@ class BurgerBuilder extends Component {
                 />
             </React.Fragment>
         );
+        if (!this.state.ingredients) {
+            burgerAndBuildControls = <Spinner />;
+        }
+        return (
+            <React.Fragment>
+                {modal}
+                {burgerAndBuildControls}
+            </React.Fragment>
+        );
     }
 }
 
-export default BurgerBuilder;
+export default withErrorHandler(BurgerBuilder, axios);
