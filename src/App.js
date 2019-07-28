@@ -1,6 +1,6 @@
 import "./assets/css/bootstrap.css";
 import React from "react";
-import Layout from "./components/layout/Layout";
+import Layout from "./containers/layout/Layout";
 
 function App() {
     return <Layout />;

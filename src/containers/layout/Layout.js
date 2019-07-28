@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 // import styles from "./Layout.module.css";
-import Sidebar from "../UI/Sidebar/Sidebar";
-import BurgerBuilder from "../../containers/burger_builder/BurgerBuilder";
-import Navbar from "../UI/Navbar/Navbar";
-import MenuIcon from "../UI/MenuIcon/MenuIcon";
+import Sidebar from "../../components/UI/Sidebar/Sidebar";
+import BurgerBuilder from "../burger_builder/BurgerBuilder";
+import Navbar from "../../components/UI/Navbar/Navbar";
+import MenuIcon from "../../components/UI/MenuIcon/MenuIcon";
 
 class Layout extends Component {
     state = {
@@ -18,8 +18,8 @@ class Layout extends Component {
         return (
             <React.Fragment>
                 <div className={`container-fluid p-0`}>
-                    <div className={`row`}>
-                        <div className={`px-0 col-md-12`}>
+                    <div className={`d-flex`}>
+                        <div className={`flex-fill`}>
                             <Navbar />
                         </div>
                     </div>
