@@ -25,19 +25,13 @@ class Layout extends Component {
                     </div>
 
                     <div className={`d-flex`}>
-                        {this.state.showSidebar ? (
-                            <Sidebar
-                                toggleSidebarHandler={this.toggleSidebarHandler}
-                            />
-                        ) : (
-                            <div className={`mt-3 ml-3`}>
-                                <MenuIcon
-                                    toggleSidebarHandler={
-                                        this.toggleSidebarHandler
-                                    }
-                                />
-                            </div>
-                        )}
+                        <Sidebar
+                            toggleSidebarHandler={this.toggleSidebarHandler}
+                            showSidebar={this.state.showSidebar}
+                        />
+                        <MenuIcon
+                            toggleSidebarHandler={this.toggleSidebarHandler}
+                        />
                         <div className={`flex-grow-1`}>
                             <BurgerBuilder />
                         </div>

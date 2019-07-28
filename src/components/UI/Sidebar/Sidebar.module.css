@@ -1,15 +1,27 @@
 .Sidebar {
+    background-color: #111;
     position: relative;
     top: 0;
     left: 0;
-    width: 13vw;
     z-index: 100;
     overflow: hidden;
-    transition: display 0.5;
+    transition: width 0.5;
 }
+
+.SidebarOpen {
+    width: 30vw;
+}
+
 .Sidebar a {
-    margin-left: 10px;
     text-decoration: none;
     cursor: pointer;
     color: white;
+    display: block;
+    font-size: 18px;
+    padding: 4px 6px;
+    transition: color 0.3s;
+}
+
+.Sidebar a:hover {
+    color: #e99001;
 }

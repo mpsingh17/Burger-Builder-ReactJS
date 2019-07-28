@@ -1,27 +1,33 @@
 import React from "react";
+import { Transition } from "react-spring/renderprops";
+
 import styles from "./Sidebar.module.css";
 
 const sidebar = props => {
     return (
-        <div className={`${styles.Sidebar} d-flex flex-column bg-warning px-2`}>
-            <div className="d-flex mt-2">
-                <div className="flex-grow-1">
-                    <a href="#">Link 1</a>
-                </div>
-
-                <div className={`ml-auto align-self-center mr-2`}>
-                    <a
-                        href="#"
-                        className={`${styles.CrossIcon}`}
-                        onClick={props.toggleSidebarHandler}
+        <Transition
+            items={props.showSidebar}
+            from={{ width: 0 }}
+            enter={{ width: 180 }}
+            leave={{ width: 0 }}
+            config={{ duration: 150 }}
+        >
+            {toggle =>
+                toggle &&
+                (style => (
+                    <div
+                        className={`${
+                            styles.Sidebar
+                        } d-flex flex-column align-items-center pt-2`}
+                        style={style}
                     >
-                        X
-                    </a>
-                </div>
-            </div>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-        </div>
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                ))
+            }
+        </Transition>
     );
 };
 
