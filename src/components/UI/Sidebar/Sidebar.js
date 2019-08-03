@@ -8,7 +8,7 @@ const sidebar = props => {
         <Transition
             items={props.showSidebar}
             from={{ width: 0 }}
-            enter={{ width: 180 }}
+            enter={{ width: 220 }}
             leave={{ width: 0 }}
             config={{ duration: 150 }}
         >

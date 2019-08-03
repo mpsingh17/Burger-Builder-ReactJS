@@ -23,16 +23,21 @@ class Layout extends Component {
                             <Navbar />
                         </div>
                     </div>
-
-                    <div className={`d-flex`}>
-                        <Sidebar
-                            toggleSidebarHandler={this.toggleSidebarHandler}
-                            showSidebar={this.state.showSidebar}
-                        />
-                        <MenuIcon
-                            toggleSidebarHandler={this.toggleSidebarHandler}
-                        />
-                        <div className={`flex-grow-1`}>
+                </div>
+                <div className={`row`}>
+                    <div className={`col-md-2`}>
+                        <div className={`d-flex`}>
+                            <Sidebar
+                                toggleSidebarHandler={this.toggleSidebarHandler}
+                                showSidebar={this.state.showSidebar}
+                            />
+                            <MenuIcon
+                                toggleSidebarHandler={this.toggleSidebarHandler}
+                            />
+                        </div>
+                    </div>
+                    <div className={`col-md-10`}>
+                        <div className={`d-flex`}>
                             <BurgerBuilder />
                         </div>
                     </div>
