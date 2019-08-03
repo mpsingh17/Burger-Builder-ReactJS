@@ -86,27 +86,41 @@ class BurgerBuilder extends Component {
     };
 
     purchaseContinue = () => {
-        this.setState({ loading: true });
-        const order = {
-            ingredients: this.state.ingredients,
-            price: this.state.price.toFixed(2),
-            customer: {
-                name: "Manpreet",
-                address: {
-                    street: "123 Max St.",
-                    zip: "1234",
-                    country: "AZ"
-                },
-                email: "abc@gmail.com"
-            }
-        };
-        axios
-            .post("/orders.json", order)
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
-            .finally(() => {
-                this.setState({ loading: false, showModal: false });
-            });
+        // this.setState({ loading: true });
+        // const order = {
+        //     ingredients: this.state.ingredients,
+        //     price: this.state.price.toFixed(2),
+        //     customer: {
+        //         name: "Manpreet",
+        //         address: {
+        //             street: "123 Max St.",
+        //             zip: "1234",
+        //             country: "AZ"
+        //         },
+        //         email: "abc@gmail.com"
+        //     }
+        // };
+        // axios
+        //     .post("/orders.json", order)
+        //     .then(res => console.log(res))
+        //     .catch(err => console.log(err))
+        //     .finally(() => {
+        //         this.setState({ loading: false, showModal: false });
+        //     });
+        const queryparams = [];
+        for (let ingredient in this.state.ingredients) {
+            queryparams.push(
+                encodeURIComponent(ingredient) +
+                    "=" +
+                    encodeURIComponent(this.state.ingredients[ingredient])
+            );
+        }
+        const queryString = queryparams.join("&");
+
+        this.props.history.push({
+            pathname: "/checkout",
+            search: "?" + queryString
+        });
     };
 
     render() {
