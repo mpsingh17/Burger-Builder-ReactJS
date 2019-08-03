@@ -29,7 +29,7 @@
 }
 
 .BurgerTop {
-    height: 13vh;
+    height: 6vh;
     background-color: #e99001;
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
@@ -37,7 +37,7 @@
 }
 
 .BurgerBottom {
-    height: 13vh;
+    height: 6vh;
     background-color: #e99001;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;

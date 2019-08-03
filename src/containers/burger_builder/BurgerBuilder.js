@@ -146,7 +146,7 @@ class BurgerBuilder extends Component {
                 {modal}
                 <div className={`row`}>
                     <div className={`col-md-4`}>{burger}</div>
-                    <div className={`col-md-8 border border-danger`}>
+                    <div className={`col-md-8 px-5`}>
                         <BuildControls
                             price={this.state.price}
                             isPurchasable={this.state.isPurchasable}
