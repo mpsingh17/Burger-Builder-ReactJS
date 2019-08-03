@@ -37,9 +37,7 @@ class Layout extends Component {
                         </div>
                     </div>
                     <div className={`col-md-10`}>
-                        <div className={`d-flex`}>
-                            <BurgerBuilder />
-                        </div>
+                        <BurgerBuilder />
                     </div>
                 </div>
             </React.Fragment>

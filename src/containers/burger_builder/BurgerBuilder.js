@@ -133,25 +133,31 @@ class BurgerBuilder extends Component {
                 </Modal>
             );
         }
-        let burgerAndBuildControls = (
+        let burger = (
             <React.Fragment>
                 <Burger ingredients={this.state.ingredients} />
-                <BuildControls
-                    price={this.state.price}
-                    isPurchasable={this.state.isPurchasable}
-                    addIngredientHandler={this.addIngredientHandler}
-                    removeIngredientHandler={this.removeIngredientHandler}
-                    showModalHandler={this.showModalHandler}
-                />
             </React.Fragment>
         );
         if (!this.state.ingredients) {
-            burgerAndBuildControls = <Spinner />;
+            burger = <Spinner />;
         }
         return (
             <React.Fragment>
                 {modal}
-                {burgerAndBuildControls}
+                <div className={`row`}>
+                    <div className={`col-md-4`}>{burger}</div>
+                    <div className={`col-md-8 border border-danger`}>
+                        <BuildControls
+                            price={this.state.price}
+                            isPurchasable={this.state.isPurchasable}
+                            addIngredientHandler={this.addIngredientHandler}
+                            removeIngredientHandler={
+                                this.removeIngredientHandler
+                            }
+                            showModalHandler={this.showModalHandler}
+                        />
+                    </div>
+                </div>
             </React.Fragment>
         );
     }
